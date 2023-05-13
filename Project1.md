@@ -8,3 +8,4 @@ NB Because this is my first project and i had already done the project before wa
 ![image](https://github.com/Ezekiel69/Darey.io-PBL-Projects/assets/66247894/32531608-3102-467b-8a91-5ab9cf7d1dae)
 ![image](https://github.com/Ezekiel69/Darey.io-PBL-Projects/assets/66247894/d43feabd-3fbb-4619-94ef-3159b376b169)
 ![image](https://github.com/Ezekiel69/Darey.io-PBL-Projects/assets/66247894/decc5e70-792d-4056-8a57-2dd3296110a8)
+I was able to successfully implement project 1
