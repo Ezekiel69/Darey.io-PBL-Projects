@@ -146,6 +146,7 @@ server {
     }
 
 }
+
 ![image](https://github.com/Ezekiel69/Darey.io-PBL-Projects/assets/66247894/97331e81-9c12-4127-9424-3d9155dc13f6)
 Here’s what each of these directives and location blocks do:
 listen — Defines what port Nginx will listen on. In this case, it will listen on port 80, the default port for HTTP.
@@ -200,6 +201,7 @@ Type or paste the following lines into the new file. This is valid PHP code that
 phpinfo();
 
 You can now access this page in your web browser by visiting the domain name or public IP address you’ve set up in your Nginx configuration file, followed by /info.php:
+
 ![image](https://github.com/Ezekiel69/Darey.io-PBL-Projects/assets/66247894/8e87e1e2-c8bc-427d-993e-d420ace3a80b)
 http://`server_domain_or_IP`/info.php
 You will see a web page containing detailed information about your server:
@@ -209,19 +211,23 @@ You will see a web page containing detailed information about your server:
 After checking the relevant information about your PHP server through that page, it’s best to remove the file you created as it contains sensitive information about your PHP environment and your Ubuntu server. You can use rm to remove that file:
 sudo rm /var/www/your_domain/info.php
 You can always regenerate this file if you need it later.
-## STEP 6 – RETRIEVING DATA FROM MYSQL DATABASE WITH PHP (CONTINUED)
+
+## STEP 6 – RETRIEVING DATA FROM MYSQL DATABASE WITH PHP-CONTINUED
 In this step you will create a test database (DB) with simple “To do list” and configure access to it, so the Nginx website would be able to query data from the DB and display it.
 
 At the time of this writing, the native MySQL PHP library mysqlnd doesn’t support caching_sha2_authentication, the default authentication method for MySQL 8. We’ll need to create a new user with the mysql_native_password authentication method in order to be able to connect to the MySQL database from PHP.
 
 We will create a database named example_database and a user named example_user, but you can replace these names with different values.
+
 ![image](https://github.com/Ezekiel69/Darey.io-PBL-Projects/assets/66247894/b494a3d3-4e88-4071-842f-94d563578086)
+
 First, connect to the MySQL console using the root account:
 sudo mysql
 To create a new database, run the following command from your MySQL console:
 
 mysql> CREATE DATABASE `example_database`;
 Now you can create a new user and grant him full privileges on the database you have just created.
+
 ![image](https://github.com/Ezekiel69/Darey.io-PBL-Projects/assets/66247894/7457b5cc-89ad-4e88-bae4-0321071b8c22)
 
 The following command creates a new user named example_user, using mysql_native_password as default authentication method. We’re defining this user’s password as password, but you should replace this value with a secure password of your own choosing.
@@ -288,7 +294,9 @@ $user = "example_user";
 $password = "password";
 $database = "example_database";
 $table = "todo_list";
+
 ![image](https://github.com/Ezekiel69/Darey.io-PBL-Projects/assets/66247894/552990cf-7463-438b-b4ac-52f35598c724)
+
 try {
   $db = new PDO("mysql:host=localhost;dbname=$database", $user, $password);
   echo "<h2>TODO</h2><ol>";
@@ -306,5 +314,7 @@ You can now access this page in your web browser by visiting the domain name or 
 
 http://<Public_domain_or_IP>/todo_list.php
 You should see a page like this, showing the content you’ve inserted in your test tabl
+
 ![image](https://github.com/Ezekiel69/Darey.io-PBL-Projects/assets/66247894/7213c843-3983-4329-9870-51a64843fc9a)
+
 WE HAVE SUCCESSFUL IMPLEMENTED PROJECT 2
